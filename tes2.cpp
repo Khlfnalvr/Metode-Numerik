@@ -21,10 +21,10 @@ void rungeKutta(double x0, double y0, double x, double h) {
         k2 = h * f(x0 + 0.5 * h, y + 0.5 * k1);
         k3 = h * f(x0 + h, y + k2);
 
-        // Update next value of y
+        // Update y nya
         y = y + (1.0 / 6.0) * (k0 + 2 * k1 + 2 * k2 + k3);
 
-        // Update next value of x
+        // Update x nya
         x0 = x0 + h;
     } //ni tar looping dari x0 sampe x yang ditentuin, banyak iterasinya tergantung h
 
@@ -32,13 +32,13 @@ void rungeKutta(double x0, double y0, double x, double h) {
 }
 
 int main() {
-    double x0 = 1, y = 1, x = 2, h;
+    double x0 = 1, y = 1, x, h;
 
     cout << "Masukkan h = ";
     cin >> h;
     cout << "Masukkan x = ";
-    cin >> h;
+    cin >> x;
 
-    rungeKutta(x0, y, x, h);
+    rungeKutta(x0, y, x, h); // call fungsi runge kutta
     return 0;
 }
